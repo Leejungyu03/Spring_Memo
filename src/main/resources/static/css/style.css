@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+header {height: 100px;}
+header .gnb {
+	width: 63%;
+	margin-left: 18%;
+	background-color: rgb(222, 222, 222);
+}
+header .gnb .logo h1 {
+	line-height: 100px;
+	margin-left: 30px;
+	font-weight: 900;
+}
+header .login-info div span {
+	font-size: 18px;
+}
+header .login-info div a {
+	color: black;
+	font-weight: bold;
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+.contents {height: 500px;}
+.contents .sign-up-box {width:550px;}
+.contents .sign-up-table th {background:#D8D8D8;}
+
+footer {height: 100px;}
+footer .foot {
+	width: 63%;
+	height: 100%;
+	margin-left: 18%;
+	background-color: rgb(222, 222, 222);
+	text-align: center;
+}
+footer .foot span {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 100px;
+}
