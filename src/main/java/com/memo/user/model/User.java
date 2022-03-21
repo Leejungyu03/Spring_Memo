@@ -2,6 +2,7 @@ package com.memo.user.model;
 
 public class User {
 	
+	private int id;
 	private String loginId;
 	private String password;
 	private String name;
@@ -9,6 +10,13 @@ public class User {
 	private String createdAt;
 	private String updatedAt;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getLoginId() {
 		return loginId;
 	}
