@@ -14,4 +14,8 @@ public class UserBO {
 	public boolean existUserByLoginId (String loginId) {
 		return userDAO.existUserByLoginId(loginId);
 	}
+	
+	public int addUser(String loginId, String password, String name, String email) {
+		return userDAO.insertUser(loginId, password, name, email);
+	}
 }

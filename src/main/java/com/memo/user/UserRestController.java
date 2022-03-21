@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.memo.common.EncryptUtils;
 import com.memo.user.bo.UserBO;
 
 @RequestMapping("/user")
@@ -32,5 +34,36 @@ public class UserRestController {
 			
 		return result;
 	}
+	
+	/**
+	 * 회원가입
+	 * @param loginId
+	 * @param password
+	 * @param name
+	 * @param email
+	 * @return
+	 */
+	@PostMapping("/sign_up_for_submit")
+	public Map<String, Object> signUp(
+			@RequestParam("loginId") String loginId,
+			@RequestParam("password") String password,
+			@RequestParam("name") String name,
+			@RequestParam("email") String email) {
+		
+		// password hasing
+		String encryptPassword = EncryptUtils.md5(password);
+		
+		// db insert
+		int row = userBO.addUser(loginId, encryptPassword, name, email);
+		
+		//response
+		Map<String, Object> result = new HashMap<>();
+		result.put("result", "success");
+		
+		if (row < 1) {
+			result.put("result", "error");
+		}
+		
+		return result;
+	}
 }
-//

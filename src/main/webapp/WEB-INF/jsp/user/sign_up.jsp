@@ -126,7 +126,7 @@
 			// 2. ajax
 			
 			// 1. submit
-			$('form')[0].submit();
+			//$('form')[0].submit();
 			
 			// 2. ajax
 			let url = $('#signUpForm').attr('action'); // form에 있는 action 주소 가져오기
