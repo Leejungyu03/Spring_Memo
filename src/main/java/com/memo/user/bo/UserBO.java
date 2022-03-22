@@ -16,8 +16,8 @@ public class UserBO {
 		return userDAO.existUserByLoginId(loginId);
 	}
 	
-	public User getUserBuLoginIdAndPassword(String loginId, String password) {
-		return userDAO.selectUserBuLoginIdAndPassword(loginId, password);
+	public User getUserByLoginIdAndPassword(String loginId, String password) {
+		return userDAO.selectUserByLoginIdAndPassword(loginId, password);
 	}
 	
 	public int addUser(String loginId, String password, String name, String email) {

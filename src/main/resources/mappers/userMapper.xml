@@ -12,7 +12,7 @@
  			`loginId` = #{loginId}
  	</select>
  	
- 	<select id="selectUserBuLoginIdAndPassword" parameterType="map" resultType="com.memo.user.model.User">
+ 	<select id="selectUserByLoginIdAndPassword" parameterType="map" resultType="com.memo.user.model.User">
  		SELECT
  			`id`
 			,`loginId`

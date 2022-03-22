@@ -79,7 +79,7 @@ public class UserRestController {
 		
 		String encryptPassword = EncryptUtils.md5(password);
 		
-		User user = userBO.getUserBuLoginIdAndPassword(loginId, encryptPassword);
+		User user = userBO.getUserByLoginIdAndPassword(loginId, encryptPassword);
 		
 		Map<String, Object> result = new HashMap<>();
 		if (user != null) {
