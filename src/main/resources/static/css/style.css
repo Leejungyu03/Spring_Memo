@@ -21,7 +21,7 @@ header .login-info div a {
 	font-size: 18px;
 }
 
-.contents {height: 500px;}
+.contents {min-height: 500px;}
 .contents .sign-up-box {width:550px;}
 .contents .sign-up-table th {background:#D8D8D8;}
 
