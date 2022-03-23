@@ -1,5 +1,6 @@
 package com.memo.post.bo;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,14 @@ public class PostBO {
 		
 		String imagePath = null;
 		if (file != null) {
-			fileManagerService.saveFile(loginId, file);
+			try {
+				imagePath = fileManagerService.saveFile(loginId, file);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		
-//		return postDAO.insertPost(userId, subject, content, imagePath);
-		return 0;
+		return postDAO.insertPost(userId, subject, content, imagePath);
 	}
 }

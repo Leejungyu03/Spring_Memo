@@ -34,10 +34,14 @@ public class PostRestController {
 		String userLoginId = (String) session.getAttribute("userLoginId");
 		
 		// BO create
-		postBO.addPost(userLoginId, userId, subject, content, file);
+		int row = postBO.addPost(userLoginId, userId, subject, content, file);
 		
 		Map<String, Object> result = new HashMap<>();
 		result.put("result", "success");
+		if (row < 1) {
+			result.put("result", "error");
+			result.put("error_message", "메모 저장에 실패했습니다. 다시 시도해주세요.");
+		}
 		
 		return result;
 	}
