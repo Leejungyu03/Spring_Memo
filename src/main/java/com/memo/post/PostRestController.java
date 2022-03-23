@@ -17,7 +17,7 @@ import com.memo.post.bo.PostBO;
 
 @RequestMapping("/post")
 @RestController
-public class PostrestController {
+public class PostRestController {
 	
 	@Autowired
 	private PostBO postBO;
