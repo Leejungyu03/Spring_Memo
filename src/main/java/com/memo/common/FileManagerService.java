@@ -39,4 +39,20 @@ public class FileManagerService {
 		// http://localhost/images/marobiana_16205748673/sun.png
 		return "/images/" + directoryName + file.getOriginalFilename();
 	}
+	
+	// 파일 삭제
+	// input : imagePath
+	// output : x
+	public void deleteFile(String imagePath) throws IOException {
+		Path path = Paths.get(FILE_UPLOAD_PATH + imagePath.replace("/images", ""));
+	
+		if (Files.exists(path)) {
+			Files.delete(path);
+		}
+		
+		path = path.getParent();
+		if (Files.exists(path)) {
+			Files.delete(path);
+		}
+	}
 }
